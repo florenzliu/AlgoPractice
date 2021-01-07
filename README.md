@@ -14,5 +14,5 @@ Operations:
 
 2. Algorithm
 - Sort
-* mergesort: post-order
-* quicksort: pre-order
+>- mergesort: post-order
+>- quicksort: pre-order
