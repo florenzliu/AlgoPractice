@@ -13,3 +13,6 @@ Operations:
  - traversal: linear (for/while), nonlinear (recursion)
 
 2. Algorithm
+- Sort
+* mergesort: post-order
+* quicksort: pre-order
