@@ -74,5 +74,5 @@ class Solution:
 
 **Complexity**
 
-- Time Complexity: ```O(max(N, K))``` where N is the length of the ```num``` array and K is the length of ```k```.
-- Space Complexity: ```O(max(N, K))``` 
+- Time Complexity: ```O(max(N, logk))``` where ```N``` is the length of the ```num``` array and ```logk``` is the length of the array-form of ```k```.
+- Space Complexity: ```O(max(N, logk))``` 
