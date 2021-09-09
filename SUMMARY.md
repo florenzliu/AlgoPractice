@@ -1,5 +1,5 @@
 # Table of contents
 
 * [README](README.md)
-* [Array](preview.md)
+* [Preview](Preview.md)
 
