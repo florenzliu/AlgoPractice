@@ -40,11 +40,11 @@ num does not contain any leading zeros except for the zero itself.\
 ******************************
 **Explanation**
 
-- Convert k to its array-form. \
-- Add the array-forms of num and k by digit from the end to the beginning and save it in the result array. \
-- Reverse the array-form of the result. \
+- Convert k to its array-form. 
+- Add the array-forms of num and k by digit from the end to the beginning and save it in the result array. 
+- Reverse the array-form of the result. 
 
-Use the quotient and remainder divided by 10: set the current position as the remainder and update the quotient for the next digit.
+Use the quotient and remainder divided by 10: set the current position as the remainder and update the quotient for the next position.
 
 **Python**
 
