@@ -1,20 +1,18 @@
-# Preview
+# Array
 
-## Array
-
-#### Time Complexity Analysis
+## Time Complexity Analysis
 
 | Type | Insert | Delete | Update | Search | Traverse |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Array | O\(n\) | O\(n\) | O\(1\) | O\(1\) | O\(n\) |
 
-#### Operations
+## Operations
 
 * each\(\): traverse
 * pop\(index\): delete element by its index
 * insert\(item, index\): insert item at index
 
-#### Practice Questions
+## Practice Questions
 
 * Easy
 
@@ -32,7 +30,7 @@ LC 380. [Insert Delete GetRandom O\(1\)](https://leetcode.com/problems/insert-de
 
 * Hard
 
-LC 41. [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) 
+LC 41. [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
 ```python
 def bba():
@@ -40,7 +38,7 @@ def bba():
 ```
 
 {% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
+Super-powers are granted randomly so please submit an issue if you're not happy with yours.
 {% endhint %}
 
 Once you're strong enough, save the world:
