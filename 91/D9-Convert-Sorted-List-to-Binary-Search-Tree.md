@@ -36,7 +36,7 @@ Output: [3,1]
 ******************************
 **Explanation**
 - Iterate over the linked list to find its length
-- Simulate the inorder traversal by using the mid point, i.e. (start + edn) / 2.
+- Simulate the inorder traversal by using the mid point, i.e. (start + end) / 2.
 - Recurse on the left half, process the current head value, progress the head node to the next node, and then recurse on the right half.
 
 **Python**
