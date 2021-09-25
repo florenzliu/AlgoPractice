@@ -23,12 +23,33 @@ Output: 7
 
 ******************************
 **Explanation**
-
+- traverse the tree using BFS and queue
+- store the first element at each level each time
+- return the last first element
   
 **Python**
 
 ```python
-      
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
+        queue = [root]
+        while queue:
+            length = len(queue)
+            res = queue[0].val
+            for i in range(length):
+                curr = queue.pop(0)
+                if curr:
+                    if curr.left:
+                        queue.append(curr.left)
+                    if curr.right:
+                        queue.append(curr.right)
+        return res      
 ```
 
 **Complexity**
