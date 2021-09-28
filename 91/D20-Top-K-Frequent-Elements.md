@@ -48,6 +48,21 @@ class Solution:
             return nums
         count = Counter(nums)
         return heapq.nlargest(k, count.keys(), key=count.get)
+    
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        if k == len(nums):
+            return nums
+        count = Counter(nums)
+        
+        # implementation of heapq nlargest
+        q = []
+        for key, val in count.items():
+            heapq.heappush(q, (val, key))
+            if len(q) > k:
+                heapq.heappop(q)
+            
+        return [val for key, val in q]
 
 ```
 
