@@ -32,3 +32,25 @@ LC 1906.
 
 LC 992.
 
+## Monotonic Stack
+
+#### Practice Questions
+
+* Medium
+
+LC 402.
+
+LC 1081.
+
+LC 239.
+
+LC 84. 
+
+LC. 739.
+
+* Hard
+
+LC 316.
+
+LC 321.
+
