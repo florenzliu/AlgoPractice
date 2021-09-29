@@ -1,6 +1,6 @@
 # Table of contents
 
 * [README](README.md)
-* [Preview](preview.md)
+* [Chap 1. Array, Stack, Queue](preview.md)
 * [Special Topics](special-topics.md)
 

@@ -34,6 +34,8 @@ LC 992.
 
 ## Monotonic Stack
 
+Applicable when having partially ordered sequence
+
 #### Practice Questions
 
 * Medium
@@ -47,6 +49,10 @@ LC 239.
 LC 84. 
 
 LC. 739.
+
+LC 255.
+
+LC 768.
 
 * Hard
 

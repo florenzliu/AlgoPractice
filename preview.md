@@ -1,4 +1,4 @@
-# Preview
+# Chap 1. Array, Stack, Queue
 
 ## Array
 
@@ -67,6 +67,8 @@ LC 946. [Validate Stack Sequences](https://leetcode.com/problems/validate-stack-
 
 LC 227. [Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/)
 
+LC 20. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+
 ## Queue
 
 #### Time Complexity Analysis
@@ -101,4 +103,16 @@ LC 542. [01 Matrix](https://leetcode.com/problems/01-matrix/)
 * Hard
 
 LC 84. [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+
+## Bucket & Counting
+
+#### Practice Questions
+
+* Medium
+
+LC 49. [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+
+LC 825. [Friends Of Appropriate Ages](https://leetcode.com/problems/friends-of-appropriate-ages/)
+
+[Largest Range](https://github.com/azl397985856/leetcode/issues/420)
 
