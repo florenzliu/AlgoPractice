@@ -1,4 +1,4 @@
-## Leetcode 989. Add to Array-Form of Integer
+### Leetcode 989. [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/)
 
 The array-form of an integer num is an array representing its digits in left to right order.
 
@@ -40,7 +40,6 @@ num does not contain any leading zeros except for the zero itself.\
 ******************************
 **Explanation**
 
-- Convert k to its array-form. 
 - Add the array-forms of num and k by digit from the end to the beginning and save it in the result array. 
 - Reverse the array-form of the result. 
 
@@ -48,27 +47,22 @@ Use the quotient and remainder divided by 10: set the current position as the re
 
 **Python**
 
-```
+```python
 class Solution:
     def addToArrayForm(self, num: List[int], k: int) -> List[int]:
-        newK = []
-        for i in str(k):
-            newK.append(int(i))
-        
         result = []
-        i, j = len(num)-1, len(newK)-1
-        quotient, remainder = 0, 0
-        while i >= 0 or j >= 0:
+        i = len(num)-1
+        carry = 0
+        while i >= 0 or k > 0:
             currI = num[i] if i >= 0 else 0
-            currJ = newK[j] if j >= 0 else 0
-            curr = currI + currJ + quotient
+            curr = currI + k % 10 + carry
             result.append(curr % 10)
-            quotient = curr // 10
+            carry = curr // 10
             i -= 1
-            j -= 1
+            k //= 10
             
-        if quotient != 0:
-            result.append(quotient)
+        if carry != 0:
+            result.append(carry)
         return result[::-1]
 ```
 
