@@ -1,54 +1,21 @@
-### Leetcode 1590. [Make Sum Divisible by P](https://leetcode.com/problems/make-sum-divisible-by-p/)
-Given an array of positive integers nums, remove the smallest subarray (possibly empty) such that the sum of the remaining elements is divisible by p. It is not allowed to remove the whole array.
-
-Return the length of the smallest subarray that you need to remove, or -1 if it's impossible.
-
-A subarray is defined as a contiguous block of elements in the array.
+### [Delete Sublist to Make Sum Divisible By K](https://binarysearch.com/problems/Delete-Sublist-to-Make-Sum-Divisible-By-K)
+You are given a list of positive integers nums and a positive integer k. Return the length of the shortest sublist (can be empty sublist ) you can delete such that the resulting list's sum is divisible by k. You cannot delete the entire list. If it's not possible, return -1.
 
 **Example 1:**
 
 ```
-Input: nums = [3,1,4,2], p = 6
-Output: 1
-Explanation: The sum of the elements in nums is 10, which is not divisible by 6. We can remove the subarray [4], and the sum of the remaining elements is 6, which is divisible by 6.
-```
-
-**Example 2:**
-
-```
-Input: nums = [6,3,5,2], p = 9
-Output: 2
-Explanation: We cannot remove a single element to get a sum divisible by 9. The best way is to remove the subarray [5,2], leaving us with [6,3] with sum 9.
-```
-
-**Example 3:**
-
-```
-Input: nums = [1,2,3], p = 3
-Output: 0
-Explanation: Here the sum is 6. which is already divisible by 3. Thus we do not need to remove anything.
-```
-
-**Example 4:**
-
-```
-Input: nums = [1,2,3], p = 7
-Output: -1
-Explanation: There is no way to remove a subarray in order to get a sum divisible by 7.
-```
-
-**Example 5:**
-
-```
-Input: nums = [1000000000,1000000000,1000000000], p = 3
-Output: 0
+Input
+nums = [1, 8, 6, 4, 5]
+k = 7
+Output
+2
+Explanation
+We can remove the sublist [6, 4] to get [1, 8, 5] which sums to 14 and is divisible by 7.
 ```
 
 **Constraints:**
 
-- 1 <= nums.length <= 10<sup>5</sup>
-- 1 <= nums[i] <= 10<sup>9</sup>
-- 1 <= p <= 10<sup>9</sup>
+- 1 ≤ n ≤ 100,000 where n is the length of nums
 
 ******************************
 **Explanation**
