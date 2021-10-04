@@ -52,14 +52,32 @@ Output: 0
 
 ******************************
 **Explanation**
-
+- use prefix sum + hashmap
+- if x % p = a, y % p = a, (x - y) % p = 0
 
 **Python**
 
 ```python
+class Solution:
+    def minSubarray(self, nums: List[int], p: int) -> int:
+        mod = sum(nums) % p
+        if mod == 0:
+            return 0
+        d = defaultdict(int)
+        d[0] = -1
+        total = 0
+        ans = len(nums)
+        for i in range(len(nums)):
+            total += nums[i]
+            curr = total % p
+            target = (curr - mod + p) % p
+            if target in d:
+                ans = min(ans, i - d[target])
+            d[curr] = i
+        return -1 if ans == len(nums) else ans
 ```
 
 **Complexity**:
 
-- Time Complexity: 
-- Space Complexity: 
+- Time Complexity: O(n)
+- Space Complexity: O(n)
