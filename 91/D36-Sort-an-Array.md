@@ -117,7 +117,6 @@ class Solution:
         heapSort(nums)
         return nums
         
-        
         # selection sort: O(n^2), space O(1)
         # pick a minimum element from the remaining unsorted array to add to the sorted array at each iteration
         for i in range(len(nums)):
