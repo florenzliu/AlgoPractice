@@ -1,50 +1,64 @@
-### Leetcode 96. [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
-Given an integer n, return the number of structurally unique BST's (binary search trees) which has exactly n nodes of unique values from 1 to n.
+### Leetcode 260. [Single Number](https://leetcode.com/problems/single-number-iii/)
+Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.
+
+You must write an algorithm that runs in linear runtime complexity and uses only constant extra space.
 
 **Example 1:**
 
-![](https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg)
 ```
-Input: n = 3
-Output: 5
+Input: nums = [1,2,1,3,2,5]
+Output: [3,5]
+Explanation:  [5, 3] is also a valid answer.
 ```
 
 **Example 2:**
 
 ```
-Input: n = 1
-Output: 1
+Input: nums = [-1,0]
+Output: [-1,0]
+```
+
+**Example 3:**
+
+```
+Input: nums = [0,1]
+Output: [1,0]
 ```
 
 **Constraints:**
 
-- 1 <= n <= 19
+- 2 <= nums.length <= 3 * 10<sup>4</sup>
+- -2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1
+- Each integer in nums will appear twice, only two integers will appear once.
 
 ******************************
 **Explanation**
-- greedy approach: sort the array people by its weight first
-  - at most two persons: we can use two pointers, put the current lightest and the current heaviest in the remaining people on the same boat
-  - if the sum is larger than the limit, put the heaviest alone in a boat, move to the next heaviest one
-  - otherwise, move to the next lightest and the next heaviest
-  
+- use a bitmask to get the 2 numbers
+- bitmask & (-bitmask): isolate the rightmost 1-bit
+- traverse all the numbers again and find the one with the same rightmost 1-bit, XOR
+- the other element will be bitmask^x
+
 **Python**
 
 ```python
 class Solution:
-    def numRescueBoats(self, people: List[int], limit: int) -> int:
-        people.sort()
-        i, j = 0, len(people)-1
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        # two bitmasks
+        a = 0
+        for i in nums:
+            a ^= i
         
-        count = 0
-        while i <= j:
-            if people[i] + people[j] <= limit:
-                i += 1
-            count += 1
-            j -= 1
-        return count  
+        # bitmask & (-bitmask): isolate the rightmost 1-bit 
+        diff = a & (-a)
+        
+        b = 0
+        for j in nums:
+            if j & diff:
+                b ^= j
+        return [b, a^b] 
 ```
 
 **Complexity**:
 
-- Time Complexity: ```O(nlogn)```
+- Time Complexity: ```O(n)```
 - Space Complexity: ```O(1)```
