@@ -1,61 +1,67 @@
-### Leetcode 260. [Single Number](https://leetcode.com/problems/single-number-iii/)
-Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.
+### Leetcode 78. [Subset](https://leetcode.com/problems/subsets/)
+Given an integer array nums of unique elements, return all possible subsets (the power set).
 
-You must write an algorithm that runs in linear runtime complexity and uses only constant extra space.
+The solution set must not contain duplicate subsets. Return the solution in any order.
 
 **Example 1:**
 
 ```
-Input: nums = [1,2,1,3,2,5]
-Output: [3,5]
-Explanation:  [5, 3] is also a valid answer.
+Input: nums = [1,2,3]
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 ```
 
 **Example 2:**
 
 ```
-Input: nums = [-1,0]
-Output: [-1,0]
-```
-
-**Example 3:**
-
-```
-Input: nums = [0,1]
-Output: [1,0]
+Input: nums = [0]
+Output: [[],[0]]
 ```
 
 **Constraints:**
 
-- 2 <= nums.length <= 3 * 10<sup>4</sup>
-- -2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1
-- Each integer in nums will appear twice, only two integers will appear once.
+- 1 <= nums.length <= 10
+- -10 <= nums[i] <= 10
+- All the numbers of nums are unique.
 
 ******************************
 **Explanation**
-- use a bitmask to get the 2 numbers
-- bitmask & (-bitmask): isolate the rightmost 1-bit
-- traverse all the numbers again and find the one with the same rightmost 1-bit, XOR
-- the other element will be bitmask^x
+- approach 1: backtracking
+- approach 2: bit manipulation
 
 **Python**
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> List[int]:
-        # two bitmasks
-        a = 0
-        for i in nums:
-            a ^= i
-        
-        # bitmask & (-bitmask): isolate the rightmost 1-bit 
-        diff = a & (-a)
-        
-        b = 0
-        for j in nums:
-            if j & diff:
-                b ^= j
-        return [b, a^b] 
+    # Approach 1: backtracking
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def backtracking(curr, first):
+            if len(curr) == k:
+                result.append(curr[:])
+                return
+            
+            for i in range(first, n):
+                curr.append(nums[i])
+                backtracking(curr, i+1)
+                curr.pop()
+            
+        result = []
+        n = len(nums)
+        for k in range(n+1):
+            backtracking([], 0)
+        return result
+    
+    # Approach 2: bit manipulation
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        end = 1 << len(nums)
+        for sign in range(end):
+            subset = []
+            for i in range(len(nums)):
+                print(i, 1 << i, sign, (1 << i) & sign)
+                if ((1 << i) & sign) != 0:
+                    subset.append(nums[i])
+            result.append(subset)
+        return result
 ```
 
 **Complexity**:
